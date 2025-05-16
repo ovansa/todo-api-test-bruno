@@ -1,0 +1,43 @@
+name: Run Bruno API Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  bruno-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Bruno CLI
+        run: npm install -g @usebruno/cli
+
+      - name: Run Bruno tests
+        run: bru run ./ -r --env "Todo App" --output test-results.json
+
+      - name: Create reports directory
+        if: always()
+        run: mkdir -p .bruno/reports
+
+      - name: Copy results to reports directory
+        if: always()
+        run: cp test-results.json .bruno/reports/ || true
+
+      - name: Upload Bruno test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: bruno-test-report
+          path: .bruno/reports
+          if-no-files-found: ignore

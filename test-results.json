@@ -1,0 +1,579 @@
+[
+  {
+    "iterationIndex": 0,
+    "summary": {
+      "totalRequests": 8,
+      "passedRequests": 8,
+      "failedRequests": 0,
+      "skippedRequests": 0,
+      "errorRequests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalTests": 29,
+      "passedTests": 29,
+      "failedTests": 0
+    },
+    "results": [
+      {
+        "test": {
+          "filename": "Auth/Login/Successful - Valid Details.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/login",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"ovansa@gmail.com\",\n  \"password\": \"Password123\"\n}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:33 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "178",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "80ef7a38-9abc-44ea",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47b4fe10dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjgyNzdjZThkNzcwNGU0OWE5MGZmZTA3IiwiZW1haWwiOiJvdmFuc2FAZ21haWwuY29tIiwiZXhwIjoxNzQ3NDM3ODEzfQ.FWte7KBvcdF6WEzrlEzfy1I57D3sTjNet9LR2leNfEo"
+          },
+          "responseTime": 2857
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Login response should return status code 200",
+            "status": "pass",
+            "uid": "bmpvbafx7u3aqAgYQp0SX"
+          },
+          {
+            "description": "Login response should contain a token",
+            "status": "pass",
+            "uid": "fMUAHNs6CvH9o98HlOOIk"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 2.887945458,
+        "name": "Successful - Valid Details",
+        "path": "Auth/Login/Successful - Valid Details",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Auth/Login/Successful - Login - New Email and Password.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/login",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"user5766@example.com\",\n  \"password\": \"Password123\"\n}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:36 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "177",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "e61d60a4-c52c-4312",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47cb7ebedc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjgyN2JhZTdkNzcwNGU0OWE5MGZmZTE4IiwiZW1haWwiOiJ1c2VyNTc2NkBleGFtcGxlLmNvbSIsImV4cCI6MTc0NzQzNzgxNn0.lMFoN-d8ps0iHU8rUCM4us-_dI7ufZbZmtHcEbvhaBI"
+          },
+          "responseTime": 1511
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Login response should return status code 200",
+            "status": "pass",
+            "uid": "5-StgFqNbtBFZxwQM61Uk"
+          },
+          {
+            "description": "Login response should contain a token",
+            "status": "pass",
+            "uid": "5tPaPnYjHGIFy70LUublA"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 3.542780458,
+        "name": "Successful - Login - New Email and Password",
+        "path": "Auth/Login/Successful - Login - New Email and Password",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Auth/Login/Unsuccessful - Invalid Email Format.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/register",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"invalidEmail\",\n  \"fullName\": \"Bob Johnson\",\n  \"password\": \"Password123\"\n}"
+        },
+        "response": {
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:37 GMT",
+            "content-type": "text/plain; charset=utf-8",
+            "content-length": "78",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "d53db61f-9548-4f8c",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47d53e60dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "status": 400,
+            "code": "VALIDATION_ERROR",
+            "message": "Email must be a valid email"
+          },
+          "responseTime": 1091
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response should return status code 400",
+            "status": "pass",
+            "uid": "sFc_rI1MHnzgnfLA9E0b4"
+          },
+          {
+            "description": "Response should include a code with value 'VALIDATION_ERROR'",
+            "status": "pass",
+            "uid": "rfO7PVbBAdY3jtrfutaJ-"
+          },
+          {
+            "description": "Response should include a message that describes the error",
+            "status": "pass",
+            "uid": "AReNsx5_RWmpr733rNPNL"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.105728458,
+        "name": "Unsuccessful - Invalid Email Format",
+        "path": "Auth/Login/Unsuccessful - Invalid Email Format",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Auth/Register/Successful - Valid Details.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/register",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"user6985@example.com\",\n  \"fullName\": \"Alice Smith\",\n  \"password\": \"Password123\"\n}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:39 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "124",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "879964fd-83a6-43fb",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47dbe946dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "id": "6827baebd7704e49a90ffe19",
+            "email": "user6985@example.com",
+            "fullName": "Alice Smith",
+            "createdAt": "2025-05-16T22:23:39.298286727Z",
+            "updatedAt": "2025-05-16T22:23:39.298286877Z"
+          },
+          "responseTime": 1666
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response should return status code 201",
+            "status": "pass",
+            "uid": "PnoOjspFdCffqYlvmzchg"
+          },
+          {
+            "description": "Email should match the one set in process variable",
+            "status": "pass",
+            "uid": "BE5W7OJxmr3Jx6KP-OBRe"
+          },
+          {
+            "description": "Full name should match the one set in process variable",
+            "status": "pass",
+            "uid": "ea9YJmUGGUoGeDaKVs1qV"
+          },
+          {
+            "description": "ID should be present and not empty",
+            "status": "pass",
+            "uid": "jUlL8zMwoaJtxmG74TTBR"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.6794568330000001,
+        "name": "Successful - Valid Details",
+        "path": "Auth/Register/Successful - Valid Details",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Auth/Register/Unsuccessful - Short Password.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/register",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"user8317@example.com\",\n  \"fullName\": \"John Brown\",\n  \"password\": \"Pass\"\n}"
+        },
+        "response": {
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:40 GMT",
+            "content-type": "text/plain; charset=utf-8",
+            "content-length": "82",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "fe43ac7d-1ffd-455c",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47e678d0dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "status": 400,
+            "code": "VALIDATION_ERROR",
+            "message": "Password must be at least 6 characters"
+          },
+          "responseTime": 1108
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response should return status code 400",
+            "status": "pass",
+            "uid": "rB1Ov5h7PDUfZV35aROcU"
+          },
+          {
+            "description": "Response should include a code with value 'VALIDATION_ERROR'",
+            "status": "pass",
+            "uid": "QJB0AbtOsQ-tWESVGGg-p"
+          },
+          {
+            "description": "Response should include a message that describes the error",
+            "status": "pass",
+            "uid": "1tRmOoi-WT4Wv7O3Zf42g"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.122949708,
+        "name": "Unsuccessful - Short Password",
+        "path": "Auth/Register/Unsuccessful - Short Password",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Auth/Register/Unsuccessful - Email Not Exist.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/auth/login",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"email\": \"doesnotexist@gmail.com\",\n  \"password\": \"Password123\"\n}"
+        },
+        "response": {
+          "status": 401,
+          "statusText": "Unauthorized",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:42 GMT",
+            "content-type": "text/plain; charset=utf-8",
+            "content-length": "76",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "3367ca0e-80f9-41ea",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47efaf38dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "status": 401,
+            "code": "INVALID_CREDENTIALS",
+            "message": "Invalid email or password"
+          },
+          "responseTime": 1525
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Login response should return status code 401",
+            "status": "pass",
+            "uid": "CtpF9-G5KGdOpML62PO8G"
+          },
+          {
+            "description": "Login response should include a code with value 'INVALID_CREDENTIALS'",
+            "status": "pass",
+            "uid": "B3MXToerktUa3G_Wu1DWv"
+          },
+          {
+            "description": "Login response should include a message about invalid credentials",
+            "status": "pass",
+            "uid": "YcpNgjfwK2ghvHh-OGXd3"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.532132125,
+        "name": "Unsuccessful - Email Not Exist",
+        "path": "Auth/Register/Unsuccessful - Email Not Exist",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Todo/Create Todo/Successful - Title and Completed Status.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/todos",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjgyNzdjZThkNzcwNGU0OWE5MGZmZTA3IiwiZW1haWwiOiJvdmFuc2FAZ21haWwuY29tIiwiZXhwIjoxNzQ3NDM3ODIzfQ.yD9u_-HSC2o9dDR7JhV4g8xOlW8wCWVnw21-WZZ3n3I"
+          },
+          "data": "{\n  \"title\": \"Write desk\",\n  \"completed\": false\n}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:45 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "122",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "32faa450-5346-428c",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e47feb990dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "id": "6827baf0d7704e49a90ffe1a",
+            "title": "Write desk",
+            "completed": false,
+            "createdAt": "2025-05-16T22:23:44.879843396Z",
+            "userId": "68277ce8d7704e49a90ffe07",
+            "updatedAt": "2025-05-16T22:23:44.879843396Z"
+          },
+          "responseTime": 1383
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response should return status code 201",
+            "status": "pass",
+            "uid": "DOBMYnXAxmfyCOXvlzVFX"
+          },
+          {
+            "description": "Title should match the one set in env variable",
+            "status": "pass",
+            "uid": "3dctR5i2abLe9WsiVw_A_"
+          },
+          {
+            "description": "Completed should match the one set in env variable",
+            "status": "pass",
+            "uid": "_l5ZYTYm9A1R4a_z9DVSC"
+          },
+          {
+            "description": "ID should be present and not empty",
+            "status": "pass",
+            "uid": "7hVqLW5C2Xtu-UA2pjJkH"
+          },
+          {
+            "description": "User ID should be present and not empty",
+            "status": "pass",
+            "uid": "tRBQ0Oh2RujassKISi9M3"
+          },
+          {
+            "description": "Created and updated timestamps should exist",
+            "status": "pass",
+            "uid": "16wy7XpzoKWeCwvzRed_d"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 2.764169167,
+        "name": "Successful - Title and Completed Status",
+        "path": "Todo/Create Todo/Successful - Title and Completed Status",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Todo/Create Todo/Successful - Only Title.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://todo-app-go-jq45.onrender.com/todos",
+          "headers": {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjgyNzdjZThkNzcwNGU0OWE5MGZmZTA3IiwiZW1haWwiOiJvdmFuc2FAZ21haWwuY29tIiwiZXhwIjoxNzQ3NDM3ODI2fQ.LxGq6SvE-AMWpfjiAwKpHV-dooBsQgzafsmOwbo3JXY"
+          },
+          "data": "{\n  \"title\": \"Fix desk\"\n}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Fri, 16 May 2025 22:23:47 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "122",
+            "connection": "keep-alive",
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+            "access-control-allow-methods": "POST, OPTIONS, GET, PUT, DELETE",
+            "access-control-allow-origin": "*",
+            "rndr-id": "9eab2ef7-1943-4c28",
+            "vary": "Accept-Encoding",
+            "x-render-origin-server": "Render",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "940e48114d81dc9d-FRA",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "data": {
+            "id": "6827baf3d7704e49a90ffe1b",
+            "title": "Fix desk",
+            "completed": false,
+            "createdAt": "2025-05-16T22:23:47.645569483Z",
+            "userId": "68277ce8d7704e49a90ffe07",
+            "updatedAt": "2025-05-16T22:23:47.645569483Z"
+          },
+          "responseTime": 1389
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [],
+        "testResults": [
+          {
+            "description": "Response should return status code 201",
+            "status": "pass",
+            "uid": "tRKMg7n81p7YxRkt5Zliy"
+          },
+          {
+            "description": "Title should match the one set in env variable",
+            "status": "pass",
+            "uid": "qJayDy8A9nnpc1XxtR4dH"
+          },
+          {
+            "description": "Completed should be false",
+            "status": "pass",
+            "uid": "PV81EYPVCtFVX4godXnh_"
+          },
+          {
+            "description": "ID should be present and not empty",
+            "status": "pass",
+            "uid": "Aqw2RH6tl6AVEPkl5nKZX"
+          },
+          {
+            "description": "User ID should be present and not empty",
+            "status": "pass",
+            "uid": "twp7IiVe_-NcR9vtQVIg3"
+          },
+          {
+            "description": "Created and updated timestamps should exist",
+            "status": "pass",
+            "uid": "33kg_OkfrlyBaxjXVov7E"
+          }
+        ],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 2.864698417,
+        "name": "Successful - Only Title",
+        "path": "Todo/Create Todo/Successful - Only Title",
+        "iterationIndex": 0
+      }
+    ]
+  }
+]
