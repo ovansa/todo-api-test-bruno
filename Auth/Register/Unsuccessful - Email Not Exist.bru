@@ -1,0 +1,37 @@
+meta {
+  name: Unsuccessful - Email Not Exist
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{BASE_URL}}/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "email": "doesnotexist@gmail.com",
+    "password": "Password123"
+  }
+}
+
+tests {
+  test("Login response should return status code 401", () => {
+    expect(res.getStatus()).to.equal(401);
+  });
+  
+  test("Login response should include a code with value 'INVALID_CREDENTIALS'", () => {
+    expect(res.getBody()).to.have.property("code").that.equals("INVALID_CREDENTIALS");
+  });
+  
+  test("Login response should include a message about invalid credentials", () => {
+    expect(res.getBody()).to.have.property("message").that.equals("Invalid email or password");
+  });
+}

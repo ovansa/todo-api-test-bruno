@@ -1,0 +1,63 @@
+meta {
+  name: Successful - Only Title
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://todo-app-go-jq45.onrender.com/todos
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+  authorization: Bearer {{todoToken}}
+}
+
+body:json {
+  {
+    "title": "{{title}}"
+  }
+}
+
+script:pre-request {
+  const actions = ['Buy', 'Clean', 'Fix', 'Read', 'Write', 'Watch'];
+  const items = ['groceries', 'desk', 'report', 'book', 'email', 'movie'];
+  
+  const randomAction = actions[Math.floor(Math.random() * actions.length)];
+  const randomItem = items[Math.floor(Math.random() * items.length)];
+  
+  const title = `${randomAction} ${randomItem}`;
+  
+  bru.setEnvVar("title", title);
+  console.log("Random title set:", title);
+}
+
+tests {
+  test("Response should return status code 201", () => {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("Title should match the one set in env variable", () => {
+    expect(res.getBody().title).to.equal(bru.getEnvVar("title"));
+  });
+  
+  test("Completed should be false", () => {
+    expect(res.getBody().completed).to.equal(false);
+  });
+  
+  test("ID should be present and not empty", () => {
+    expect(res.getBody()).to.have.property("id").that.is.a("string").and.not.empty;
+  });
+  
+  test("User ID should be present and not empty", () => {
+    expect(res.getBody()).to.have.property("userId").that.is.a("string").and.not.empty;
+  });
+  
+  test("Created and updated timestamps should exist", () => {
+    expect(res.getBody()).to.have.property("createdAt").that.is.a("string").and.not.empty;
+    expect(res.getBody()).to.have.property("updatedAt").that.is.a("string").and.not.empty;
+  });
+}

@@ -1,0 +1,59 @@
+meta {
+  name: Successful - Valid Details
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/auth/register
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "email": "{{email}}",
+    "fullName": "{{fullName}}",
+    "password": "{{password}}"
+  }
+}
+
+script:pre-request {
+  const randomNumber = Math.floor(1000 + Math.random() * 9000);
+  
+  const firstNames = ['John', 'Jane', 'Alice', 'Bob', 'Diana'];
+  const lastNames = ['Smith', 'Brown', 'Taylor', 'Lee', 'Johnson'];
+  const fullName = `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
+  
+  const email = `user${randomNumber}@example.com`;
+  const password = `Password123`;
+  
+  if (typeof bru !== 'undefined' && bru.setVar) {
+    bru.setVar('email', email);
+    bru.setVar('fullName', fullName);
+    bru.setVar('password', password);
+  } 
+}
+
+tests {
+  test("Response should return status code 201", () => {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("Email should match the one set in process variable", () => {
+    expect(res.getBody().email).to.equal(bru.getVar("email"));
+  });
+  
+  test("Full name should match the one set in process variable", () => {
+    expect(res.getBody().fullName).to.equal(bru.getVar("fullName"));
+  });
+  
+  test("ID should be present and not empty", () => {
+    expect(res.getBody().id).to.be.a("string").and.not.empty;
+  });
+}
