@@ -32,7 +32,7 @@ jobs:
 
       - name: Copy results to reports directory
         if: always()
-        run: cp test-results.json .bruno/reports/ || true
+        run: cp test-results.html .bruno/reports/ || true
 
       - name: Upload Bruno test results
         if: always()
