@@ -57,3 +57,8 @@ naktos run .github/workflows/test.yml
 ## ⚙️ Environment Variables
 
 Environment configurations are located in the `environments/` directory. Set these correctly before running tests.
+
+
+## 🛠 Related Projects
+
+* [Todo API (Go)](https://github.com/ovansa/todo-app-go) — The backend this suite tests.
